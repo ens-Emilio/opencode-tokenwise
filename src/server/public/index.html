@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokenwise - OpenCode Analytics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📊 Tokenwise</h1>
+      <p>Analytics de tokens para OpenCode</p>
+    </header>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Total Tokens</h3>
+        <div class="value" id="totalTokens">—</div>
+        <div class="sub">Input: <span id="totalInput">—</span> | Output: <span id="totalOutput">—</span></div>
+      </div>
+      <div class="card">
+        <h3>Custo Estimado</h3>
+        <div class="value" id="totalCost">$0.00</div>
+        <div class="sub">Últimos 30 dias</div>
+      </div>
+      <div class="card">
+        <h3>Sessões</h3>
+        <div class="value" id="sessionCount">—</div>
+        <div class="sub">Últimos 30 dias</div>
+      </div>
+      <div class="card">
+        <h3>Hoje</h3>
+        <div class="value" id="todayTokens">—</div>
+        <div class="sub">Tokens consumidos hoje</div>
+      </div>
+    </div>
+
+    <div class="charts">
+      <div class="chart-container">
+        <h3>Tokens por Dia (30 dias)</h3>
+        <canvas id="dailyChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h3>Distribuição por Modelo</h3>
+        <canvas id="modelChart"></canvas>
+      </div>
+    </div>
+
+    <div class="tables">
+      <div class="table-container">
+        <h3>Por Modelo</h3>
+        <table id="modelTable">
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>Sessões</th>
+              <th>Input</th>
+              <th>Output</th>
+              <th>Custo</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="table-container">
+        <h3>Por Dia</h3>
+        <table id="dailyTable">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Sessões</th>
+              <th>Input</th>
+              <th>Output</th>
+              <th>Custo</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="charts.js"></script>
+  <script>
+    loadDashboard()
+  </script>
+</body>
+</html>
